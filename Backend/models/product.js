@@ -1,7 +1,8 @@
 let mongoose= require("mongoose")
 let {ObjectId} =mongoose.Schema
 let productSchema= new mongoose.Schema({
-    name:{
+    name: 
+    {
         type:String,
         trim:true,
         required:true,

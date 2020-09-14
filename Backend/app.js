@@ -1,8 +1,13 @@
 let mongoose=require("mongoose");
 let express=require("express");
 let app=express();
+const bodyParser=require("body-parser")
+let cookieParser=require("cookie-parser")
+let cors=require("cors")
 require('dotenv').config();
+var authRoutes=require("./routes/auth")
 
+// DB connections
 mongoose.connect(process.env.DATABASE, {useNewUrlParser: true}).then(() => {
     console.log("DB Connected!!!")
 })
@@ -10,9 +15,23 @@ mongoose.connect(process.env.DATABASE, {useNewUrlParser: true}).then(() => {
     console.log(err);
 })
 
-const port=9000;
+//Middlewares
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(cors());
 
+
+//Routes
+app.use("/api",authRoutes);
+
+
+
+//Port
+const port= 9000 || process.env.PORT;
+
+
+// Running The Server
 app.listen(port,function(){
 
-    console.log(`App is Running at ${port}`)
+    console.log("App is Running at " + port);
 })

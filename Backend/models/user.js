@@ -43,7 +43,7 @@ var userSchema= new mongoose.Schema({
 userSchema.virtual("password")
     .set(function(password){
         this._password=password
-        this.salt = uuidv1
+        this.salt = uuidv1();
         this.encry_password= this.securePassword(password)
     })
     .get(function(){
@@ -51,7 +51,7 @@ userSchema.virtual("password")
     })
 
 
-userSchema.method={
+userSchema.methods={
 
     authenticate: function(plainpassword){
         return this.securePassword(plainpassword) === this.encry_password
