@@ -5,7 +5,10 @@ const bodyParser=require("body-parser")
 let cookieParser=require("cookie-parser")
 let cors=require("cors")
 require('dotenv').config();
+
+//my routes
 var authRoutes=require("./routes/auth")
+var userRoutes=require("./routes/user")
 
 // DB connections
 mongoose.connect(process.env.DATABASE, {useNewUrlParser: true}).then(() => {
@@ -23,7 +26,7 @@ app.use(cors());
 
 //Routes
 app.use("/api",authRoutes);
-
+app.use("/api",userRoutes);
 
 
 //Port
