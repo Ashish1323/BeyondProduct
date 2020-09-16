@@ -9,7 +9,7 @@ exports.getUserById=(req,res,next,id) => {
                 error:"Unable to find user"
             })
         }
-        req.profile= user;
+        req.profile = user;
         next();
     })
 }
