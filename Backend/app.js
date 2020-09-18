@@ -10,6 +10,7 @@ require('dotenv').config();
 var authRoutes=require("./routes/auth")
 var userRoutes=require("./routes/user")
 var categoryRoutes=require("./routes/category")
+var productRoutes=require("./routes/product")
 
 // DB connections
 mongoose.connect(process.env.DATABASE, {useNewUrlParser: true}).then(() => {
@@ -29,6 +30,7 @@ app.use(cors());
 app.use("/api",authRoutes);
 app.use("/api",userRoutes);
 app.use("/api",categoryRoutes);
+app.use("/api",productRoutes);
 
 
 //Port
