@@ -17,7 +17,12 @@ let orderSchema= new mongoose.Schema({
     amount:{
         type:Number
     },
-    address:String,
+    address:String,        
+    status:{
+        type:String,
+        default:"received",
+        enum:["cancelled","delivered","shipped","processing","received"]
+    },
     updated:Date,
     user:{
         type:ObjectId,
