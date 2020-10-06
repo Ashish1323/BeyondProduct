@@ -7,7 +7,7 @@ import {signin, authenticate, isAuthenticated} from "../auth/helper"
 
 const Signin = () => {
 const [values,setValues] = useState({
-  email:"adityabansal17121998@gmail.com",
+  email:"loda@loda.com",
   password:"12345",
   error:"",
   loading:false,
@@ -105,7 +105,7 @@ const performRedirect =() => {
 
   return (
     <Base title="Sign In page" description="A page for user to sign in!">
-      {loadingMessage()}
+    {loadingMessage()}
       {errorMessage()}
       {signInForm()}
       {performRedirect()}

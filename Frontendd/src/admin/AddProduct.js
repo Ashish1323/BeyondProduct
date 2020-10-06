@@ -1,8 +1,11 @@
 import React,{useState,useEffect} from 'react';
 import Base from '../core/Base';
 import {Link} from 'react-router-dom'
-import { getCategories } from './helper/adminapicall';
+import { getCategories, createaProduct } from './helper/adminapicall';
+import { isAuthenticated }  from '../auth/helper';
 
+
+const {user, token} = isAuthenticated()
 const AddProduct = () => {
   
     const [values,setValues]= useState({
@@ -17,6 +20,7 @@ const AddProduct = () => {
         createdProduct:"",
         getaRedirect:false,
         formData:"",
+        errorMessage:false,
 
     })
      const {name,description,
@@ -47,11 +51,63 @@ const AddProduct = () => {
    }, [])
 
     const handleChange = name =>event =>{
-        //
+        let value= name === "photo" ? event.target.files[0] : event.target.value
+        formData.set(name,value);
+        setValues({...values, [name]: value})
     }
+
+    const successMessage = () =>
+    (
+      <div className="alert alert-success mt-3" 
+      style={{ display: createdProduct ? "" : "none" }}>
+        <h4>{createdProduct} created successfully!!</h4>
+
+      </div>
+    )
+
+    const loadingMessage = () => {
+      return (
+       loading && (
+         setTimeout( <div className="alert alert-info">
+         <h2>loading.........</h2>
+       </div>, 3000)
+        
+       )
+      );
+    };
+
+    const errorMessage = () =>
+    (
+      <div className="alert alert-danger mt-3" 
+      style={{display:error? "" : "none"}}>
+        <h4>{error}</h4>
+
+      </div>
+    )
     
-    const onSubmit = () =>{
-        //
+    const onSubmit = (event) =>{
+        event.preventDefault()
+        setValues({...values,error:"",loading:true})
+        createaProduct(user._id,token,formData).then(
+          data => {
+            if(data.err){
+              setValues({...values,error:data.err, loading:false})
+            }
+            else{
+                setValues({
+                  ...values,
+                  name:"",
+                  description:"",
+                  price:"",
+                  stock:"",
+                  photo:"",
+                  loading:false,
+                  createdProduct: data.name,
+                  errorMessage:false,
+                })
+            }
+          })
+        
     }
 
     const createProductForm = () => (
@@ -102,13 +158,15 @@ const AddProduct = () => {
               placeholder="Category"
             >
               <option>Select</option>
-              <option value="a">a</option>
-              <option value="b">b</option>
+              {categories && categories.map((c,index) => (
+                <option key={index} value={c._id}>{c.name}</option>
+              ) )}
+              
             </select>
           </div>
           <div className="form-group">
             <input
-              onChange={handleChange("quantity")}
+              onChange={handleChange("stock")}
               type="number"
               className="form-control"
               placeholder="Quantity"
@@ -133,7 +191,12 @@ const AddProduct = () => {
             </Link>
             <div className="row bg-dark text-white rounded">
                 <div className="col-md-8 offset-md-2">
+                {successMessage()}
+                {errorMessage()}
+               
                     {createProductForm()}
+              
+
                 </div>
             </div>
         </Base>
