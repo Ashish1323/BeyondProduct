@@ -35,8 +35,53 @@ export const getCategories = (userId , token, categories) =>{
       })
 }
 
+export const updateCategory = (categoryId,userId , token, category) =>{
+    return fetch(`${API}/category/${categoryId}/${userId}`,{
+        method:"PUT",
+        headers:{
+            Accept:"application/json",
+            Authorization: `Bearer ${token}`
+        },
+        body: category
+    })
+      .then(response =>{
+          return response.json();
+      })
+      .catch( err =>{
+              console.log(err);
+      })
+}
 
 
+export const deleteCategory = (categoryId,userId , token) =>{
+    return fetch(`${API}/category/${categoryId}/${userId}`,{
+        method:"DELETE",
+        headers:{
+            Accept:"application/json",
+            Authorization: `Bearer ${token}`
+        },
+        
+    })
+      .then(response =>{
+          return response.json();
+      })
+      .catch( err =>{
+              console.log(err);
+      })
+}
+
+export const getCategory = (categoryId) =>{
+    return fetch(`${API}/category/${categoryId}`,{
+        method:"GET"
+        
+    })
+      .then(response =>{
+          return response.json();
+      })
+      .catch( err =>{
+              console.log(err);
+      })
+}
 
 
 // create product
@@ -74,7 +119,7 @@ export const getProducts = (userId , token, products) =>{
 
 //delete a product
 export const deleteProduct = (productId,userId , token) =>{
-    return fetch(`${API}/${productId}/${userId}`,{
+    return fetch(`${API}/product/${productId}/${userId}`,{
         method:"DELETE",
         headers:{
             Accept:"application/json",
@@ -93,18 +138,17 @@ export const deleteProduct = (productId,userId , token) =>{
 
 //get a product
 
-export const getProduct = (userId , token, product) =>{
-    return fetch(`${API}/product`,{
-        method:"GET"
-        
+
+
+export const getProduct = productId => {
+    return fetch(`${API}/product/${productId}`, {
+      method: "GET"
     })
-      .then(response =>{
-          return response.json();
+      .then(response => {
+        return response.json();
       })
-      .catch( err =>{
-              console.log(err);
-      })
-}
+      .catch(err => console.log(err));
+  };
 
 
 //uodate a product

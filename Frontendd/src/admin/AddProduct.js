@@ -51,6 +51,7 @@ const AddProduct = () => {
    }, [])
 
     const handleChange = name =>event =>{
+    
         let value= name === "photo" ? event.target.files[0] : event.target.value
         formData.set(name,value);
         setValues({...values, [name]: value})
@@ -79,7 +80,7 @@ const AddProduct = () => {
     const errorMessage = () =>
     (
       <div className="alert alert-danger mt-3" 
-      style={{display:error? "" : "none"}}>
+      style={{display:error ? "" : "none"}}>
         <h4>{error}</h4>
 
       </div>
@@ -118,7 +119,6 @@ const AddProduct = () => {
               <input
                 onChange={handleChange("photo")}
                 type="file"
-                name="photo"
                 accept="image"
                 placeholder="choose a file"
               />
@@ -127,7 +127,6 @@ const AddProduct = () => {
           <div className="form-group">
             <input
               onChange={handleChange("name")}
-              name="photo"
               className="form-control"
               placeholder="Name"
               value={name}
@@ -136,7 +135,6 @@ const AddProduct = () => {
           <div className="form-group">
             <textarea
               onChange={handleChange("description")}
-              name="photo"
               className="form-control"
               placeholder="Description"
               value={description}
