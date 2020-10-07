@@ -40,9 +40,12 @@ export const updateCategory = (categoryId,userId , token, category) =>{
         method:"PUT",
         headers:{
             Accept:"application/json",
-            Authorization: `Bearer ${token}`
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,           
+   
+
         },
-        body: category
+        body: JSON.stringify(category)
     })
       .then(response =>{
           return response.json();
