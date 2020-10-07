@@ -6,19 +6,28 @@ import {updateCategory,getCategory } from './helper/adminapicall'
 
 
 const UpdateCategory = ({match}) => {
-   const [name,setName]= useState();
-   const[error,setError]= useState(false)
-   const[success,setSuccess]= useState(false);
+//    const [name,setName]= useState();
+//    const[error,setError]= useState(false)
+//    const[success,setSuccess]= useState(false);
+
+   const [values,setValues]=useState({
+       name:"",
+       error:false,
+       success:false,
+       formData: ""
+   })
+
+   const {name,error,success} = values
 
    const {user,token}= isAuthenticated();
 
    const preLoad = categoryId =>{
     getCategory(categoryId).then(data =>{
         if(data.err){
-            setName({...name, error:data.err})
+            setValues({...values, error:data.err})
         }else{
             console.log(name)
-            setName({...name, name:data.name, formData: new FormData()} )
+            setValues({...values, name:data.name, formData: new FormData()} )
             
         }
     })
@@ -28,26 +37,30 @@ useEffect(()=>{
     preLoad(match.params.categoryId)
 }, [])
 
-   const handleChange = event =>{
+   const handleChange = name =>event =>{
     
-         setError("")
-         setName(event.target.value)
+        //  setError("")
+        //  setName(event.target.value)
+         setValues({name: event.target.value, error:""})
     
    };
 
    const onSubmit = (event) =>{
        event.preventDefault();
-       setError("");
-       setSuccess(false);
-   
-    updateCategory(user._id, token, {name})
-      .then(data =>{
+    //    setError("");
+    //    setSuccess(false);
+  //     setValues({...values,success: false, error:""})
+    console.log(name)
+    updateCategory(match.params.categoryId,user._id,token,{name})
+    .then(data =>{
+          console.log(data)
           if(data.err){
-              setError(true)
+            setValues({ error:data.err})
           }else{
-              setError("")
-              setSuccess(true)
-              setName("")
+            //   setError("")
+            //   setSuccess(true)
+            //   setName("")
+              setValues({name: "", error:"", success: true})
           }
       }) 
 
@@ -100,7 +113,7 @@ const warningMessage=()=>{
            <input type="text" className="form-control my-2" 
            autofocus required 
            placeholder="Ex Summer t-shirts"
-           onChange={handleChange}
+           onChange={handleChange("name")}
            value={name}
             />
            <button className="btn btn-outline-info mb-2 "
