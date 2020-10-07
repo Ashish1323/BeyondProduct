@@ -94,14 +94,14 @@ useEffect(()=>{
     const successMessage=()=>{
               if(success){
                   return(
-                      <h4 className="text-success">Category Created Successfully</h4>
+                      <h4 className="text-success">Category Updated Successfully!!</h4>
                   )
               }
     }
 const warningMessage=()=>{
          if(error){
              return(
-                <h4 className="text-success">Category Failed to Create</h4>
+                <h4 className="text-success">Category Failed to Update!!</h4>
              )
          }
         
