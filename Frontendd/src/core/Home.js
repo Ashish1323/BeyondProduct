@@ -1,23 +1,43 @@
-import React from "react";
+import React, {useEffect,useState} from "react";
 import "../styles.css";
 import { API } from "../backend";
 import Base from "./Base";
+import Card from "./Card";
+import {getProducts} from "./helper/coreapicalls"
 
 export default function Home() {
-  console.log("API IS", API);
+const [products, setProducts] = useState([])
+const [error, setError] = useState(false)
+
+const LoadAllProducts = () =>{
+    getProducts().then(data=>{
+      if(data.err){
+        setError(data.err);
+      }
+      else(
+        setProducts(data)
+      )
+    })
+}
+
+useEffect(() => {
+  LoadAllProducts()
+}, [])
 
   return (
     <Base title="Home Page" description="Welcome to the Tshirt Store">
-      <div className="row">
-        <div className="col-4">
-          <button className="btn btn-success">TEST</button>
+      <div className="row text-center">
+        <h1 className="text-white text-center"> All of Our Products</h1>
+        <div className="row">
+          {products.map((product,index) => {
+                        return (
+                            <div key={index} className="col-4 row-4">
+                                <Card product={product}/ >
+                            </div>
+                        )
+                    })}
         </div>
-        <div className="col-4">
-          <button className="btn btn-success">TEST</button>
-        </div>
-        <div className="col-4">
-          <button className="btn btn-success">TEST</button>
-        </div>
+      
       </div>
     </Base>
   );
