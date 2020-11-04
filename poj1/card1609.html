@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width , initial-scale=1.0">
+	<title>cardn1609</title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;1,300;1,400;1,700&display=swap');
+		*
+		{
+			margin:0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins', sans-serif;
+		}
+		body
+		{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+		}
+		.card
+		{
+			position: relative;
+			width: 600px;
+			height: 350px;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			border-radius: 20px;
+			background: linear-gradient(135deg,#d41e31,#491f8f);
+		}
+		.card img
+		{
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			height: 350px;
+			transition:0.5s;
+		}
+		.card:hover img
+		{
+			left: 80%;
+			height: 450px;
+		}
+		.card .content
+		{
+		position: relative;
+		width: 50%
+		left:20%;
+		padding: 20px 20px 20px 40px;
+		opacity: 0;
+		visibility: hidden;
+		transition:0.5s;
+		}
+		.card:hover .content
+		{
+			opacity: 1;
+			visibility: visible;
+			left: 0%;
+		}
+		.card .content h2
+		{
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 2.5em;
+			line-height: 1em;
+
+		}
+		.card .content p
+		{
+			color: #fff;
+		}
+		.card .content a
+		{
+			position: relative;
+			display: inline-block;
+			color: #111;
+			padding: 10px 20px;
+			border-radius: 10px;
+			background: #fff;
+			margin-top: 10px;
+			text-decoration: none;
+		}
+		@media(max-width: 991px)
+		{
+			.card
+			{
+				position: relative;
+				width: auto;
+				max-width: 600px;
+				transition:0.5s;
+				align-items: flex-start;
+			}
+			.card:hover
+			{
+				height: 600px;
+			}
+			.card:hover img
+			{
+				left: 50%;
+				height: 350px;
+			}
+			.card .content
+			{
+				
+				width: 100%;
+				left: 0%;
+				padding: 40px;
+				
+			}
+				@media(max-width: 420px)
+				{
+					.card .content
+					{
+						padding: 30px;
+					}
+					.card:hover img
+					{
+						
+						height: 300px;
+					}
+				}
+		}
+	</style>
+</head>
+<body>
+	<div class="card">
+		<div class="content">
+			<h2>Captin marvel</h2>
+			<P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua.  </P>
+			<a href="#">Read more</a>
+		</div>
+		<img src="img7.jpg">
+	</div>
+</body>
+</html>

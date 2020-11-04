@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BEYOND PRODUCT</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+		<!-- Demo styles -->
+  *
+    {
+    	margin: 0;
+    	padding: 0;
+    	box-sizing: border-box;
+    }
+    html,
+
+    body {
+      position: relative;
+      height: 100%;
+    }
+    *
+    {
+    	margin: 0;
+    	padding: 0;
+    }
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    .swiper-container {
+      width: 100%;
+      height: 60%;
+
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+    .row
+    {
+    	display: flex;
+    	align-items: center;
+    	flex-wrap: wrap;
+    	justify-content: space-around;
+    }
+    .col-2
+    {
+    	flex-basis: 50%;
+    	min-width: 300px;
+    }
+    .col-2 img
+    {
+    	max-width: 100%;
+    	padding: 50px 0;
+    }
+    	.btn
+		{
+			display: inline-block;
+			background: #ff523b;
+			color: #fff;
+			padding: 8px 30px;
+			margin:30px 0;
+			border-radius: 30px;
+			transition: background 0.5s;
+
+		}
+		.btn:hover
+		{
+			background: #563434;
+		}
+  		.categories
+  		{
+  			margin: 70px 0;
+  		}
+  		.col-3 img
+  		{
+  			width: 100%;
+  		}
+  		.small-container
+  		{
+  			max-width: 1080px;
+  			margin:auto;
+  			padding-left: 25px;
+  			padding-right: 25px;
+  		}
+  		.col-4
+  		{
+  			flex-basis: 25%;
+  			padding: 10px;
+  			min-width: 200px;
+  			margin-bottom: 50px;
+  			transform: transform 0.5s;
+  		}
+  		.col-4 img{
+  			width: 100%;
+  		}
+  		.title
+  		{
+  			text-align: center;
+  			margin:0 auto 80px;
+  			position: relative;
+  			line-height: 60px;
+  			color: #555;
+  		}
+  		.title::after
+  		{
+  			content: '';
+  			background: #ff523b;
+  			width: 80px;
+  			height: 5px;
+  			border-radius: 5px;
+  			position: absolute;
+  			bottom: 0;
+  			left: 50%;
+  			transform: translateX(-50%);
+  		}
+  		h4{
+  			color: #555;
+  			font-weight: normal;
+  		}
+  		.col-4 p{
+  			font-size: 14px;
+  		}
+  		.rating .fa{
+  			color: #ff523b;
+  		}
+  		.col-4:hover{
+  			transform: translateY(-5px);
+  		}
+  		/*--------------------offer------------------*/
+  		.offer
+  		{
+  			background: radial-gradient(#fff,#fffd6d);
+  			margin-top: 80px;
+  			padding: 30px 0;
+  		}
+  		.col-2 .offer-img
+  		{
+  			padding: 50px;
+  		}
+  		/*------------------------------footer--------------------*/
+  		.footer
+  		{
+  			background: #000;
+  			color: #8a8a8a;
+  			font-size: 14px;
+  			padding: 60px 0 20px;
+  		}
+  		.footer p
+  		{
+  			color: #8a8a8a;
+  		}
+  		.footer h3
+  		{
+  			color: #fff;
+  			margin-bottom: 20px;
+  		}
+  		.footer-col-1 ,.footer-col-2 ,.footer-col-3, .footer-col-4
+  		{
+  			min-width: 200px;
+  			margin-bottom: 20px;
+  		}
+  		.footer-col-1
+  		{
+  			flex-basis: 30%;
+  		}
+  		.footer-col-2
+  		{
+  			flex: 1;
+  			text-align: center;
+  		}
+  		/*.footer-col-2 h3
+  		{
+  			width: 180px;
+  			margin-bottom: 20px;
+  		}*/
+  		.footer-col-3 ,..footer-col-4
+  		{
+  			flex-basis: 12%;
+  			text-align: center;
+  		}
+  		ul{
+  			list-style-type: none;
+  		}
+  		.app-logo
+  		{
+  			margin-top: 20px;
+  		}
+  		.app-logo img
+  		{
+  			width: 140px;
+  		}
+  		.footer hr
+  		{
+  			border: none;
+  			background: #b5b5b5;
+  			height: 1px;
+  			margin: 20px 0;
+  		}
+  		.Copyright
+  		{
+  			text-align: center;
+  		}
+	</style>
+</head>
+<body>
+
+	<!-- <div class="container"> -->
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Beyond Product</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+	
+	<!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+      		<div class="col-2">
+				<h1>The Subtle Art  <br> of Not Giving a F*ck</h1>
+				<p>In this generation-defining self-help guide, a superstar blogger cuts through the crap to show us how to stop trying to be "positive" all the time so that we can truly become better, happier people.
+
+"<br></p>
+				<a href="" class="btn">Explore Now &#8594;</a>
+		</div>
+		<div class="col-2">
+			<img src="https://cdn.shopify.com/s/files/1/0285/2821/4050/products/9780062457714_2a0b0e71-9fb9-4ec6-b12c-b017961b7503.jpg?v=1603859050">
+		</div>
+      </div>
+      <div class="swiper-slide">
+      		<div class="col-2">
+				<h1>Attitude is Everything Rev Ed <br></h1>
+				<p>Mega-successful motivational speaker profiled in the Wall Street Journal, Keith Harrell shows how to put good atttitude to work to get ahead in all aspects of life.<br></p>
+				<a href="" class="btn">Explore Now &#8594;</a>
+		</div>
+		<div class="col-2">
+			<img src="https://cdn.shopify.com/s/files/1/0285/2821/4050/products/9780060779726_6daeb0f6-6ae6-4c91-9a2b-a9bda666f33e.jpg?v=1603221933">
+		</div>
+      </div>
+      <div class="swiper-slide">
+      	<div class="col-2">
+				<h1>Give Your workout <br> A new style!</h1>
+				<p>Sucess Your always about greatness. It's about consistency. Cosistent <br> hard work gains success. Greatness will come.</p>
+				<a href="" class="btn">Explore Now &#8594;</a>
+		</div>
+		<div class="col-2">
+			<img src="img3.jpg">
+		</div>
+		</div>
+      <div class="swiper-slide">
+      		<div class="col-2">
+				<h1>Give Your workout <br> A new style!</h1>
+				<p>Sucess Your always about greatness. It's about consistency. Cosistent <br> hard work gains success. Greatness will come.</p>
+				<a href="" class="btn">Explore Now &#8594;</a>
+		</div>
+		<div class="col-2">
+			<img src="img4.jpg">
+		</div>
+      </div>
+      <div class="swiper-slide">
+      		<div class="col-2">
+				<h1>Give Your workout <br> A new style!</h1>
+				<p>Sucess Your always about greatness. It's about consistency. Cosistent <br> hard work gains success. Greatness will come.</p>
+				<a href="" class="btn">Explore Now &#8594;</a>
+		</div>
+		<div class="col-2">
+			<img src="img5.jpg">
+		</div>
+      </div>
+      <div class="swiper-slide">	
+      	<div class="col-2">
+			<h1>Give Your workout <br> A new style!</h1>
+			<p>Sucess Your always about greatness. It's about consistency. Cosistent <br> hard work gains success. Greatness will come.</p>
+			<a href="" class="btn">Explore Now &#8594;</a>
+		</div>
+		<div class="col-2">
+			<img src="img6.jpg">
+		</div></div>
+      <div class="swiper-slide">
+      		<div class="col-2">
+				<h1>Give Your workout <br> A new style!</h1>
+				<p>Sucess Your always about greatness. It's about consistency. Cosistent <br> hard work gains success. Greatness will come.</p>
+				<a href="" class="btn">Explore Now &#8594;</a>
+		</div>
+		<div class="col-2">
+			<img src="img7.jpg">
+		</div>
+      </div>
+      <div class="swiper-slide">
+      	<div class="col-2">
+			<h1>Give Your workout <br> A new style!</h1>
+			<p>Sucess Your always about greatness. It's about consistency. Cosistent <br> hard work gains success. Greatness will come.</p>
+			<a href="" class="btn">Explore Now &#8594;</a>
+		</div>
+		<div class="col-2">
+			<img src="img8.jpg">
+		</div>
+      </div>
+      <div class="swiper-slide"><div class="col-2">
+			<h1>Give Your workout <br> A new style!</h1>
+			<p>Sucess Your always about greatness. It's about consistency. Cosistent <br> hard work gains success. Greatness will come.</p>
+			<a href="" class="btn">Explore Now &#8594;</a>
+		</div>
+		<div class="col-2">
+			<img src="img9.jpg">
+		</div>
+	</div>
+      
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+
+
+
+  
+
+
+
+  	<!-- ---------------------featured products--------------- -->
+  		<div class="small-container">
+  			<h2 class="title">Best Sellers</h2>
+  			<div class="row">
+  				<div class="col-4">
+  					<img src="https://cdn.shopify.com/s/files/1/0285/2821/4050/products/9780062667632.jpg?v=1603856028">
+  					<h4>Leave the World Behind</h4>
+  					<div class="rating">
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  					</div>
+  					<p>$50.00</p>
+  				</div>
+  				<div class="col-4">
+  					<img src="imgbook2.jpg">
+  					<h4>When no one is watching</h4>
+  					<div class="rating">
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  					</div>
+  					<p>$50.00</p>
+  				</div>
+  				<div class="col-4">
+  					<img src="file:///C:/Users/HP/Downloads/imgbook4.webp">
+  					<h4>Born Survivors</h4>
+  					<div class="rating">
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star-half-o" ></i>
+  					</div>
+  					<p>$50.00</p>
+  				</div>
+  				<div class="col-4">
+  					<img src="https://cdn.shopify.com/s/files/1/0285/2821/4050/products/9780062258595.jpg?v=1603851042">
+  					<h4>The Survivors</h4>
+  					<div class="rating">
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star-half-o" ></i>
+  					</div>
+  					<p>$50.00</p>
+  				</div>
+  			</div>
+  			<h2 class="title">Just Released</h2>
+  			<div class="row">
+  				<div class="col-4">
+  					<img src="https://cdn.shopify.com/s/files/1/0285/2821/4050/products/9780062667632.jpg?v=1603856028">
+  					<h4>Leave the World Behind</h4>
+  					<div class="rating">
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  					</div>
+  					<p>$50.00</p>
+  				</div>
+  				<div class="col-4">
+  					<img src="imgbook2.jpg">
+  					<h4>When no one is watching</h4>
+  					<div class="rating">
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  					</div>
+  					<p>$50.00</p>
+  				</div>
+  				<div class="col-4">
+  					<img src="file:///C:/Users/HP/Downloads/imgbook4.webp">
+  					<h4>Born Survivors</h4>
+  					<div class="rating">
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star-half-o" ></i>
+  					</div>
+  					<p>$50.00</p>
+  				</div>
+  				<div class="col-4">
+  					<a href="https://www.google.com/"><img src="https://cdn.shopify.com/s/files/1/0285/2821/4050/products/9780062258595.jpg?v=1603851042"></a>
+  					
+  					<h4>The Survivors</h4>
+  					<div class="rating">
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star-half-o" ></i>
+  					</div>
+  					<p>$50.00</p>
+  				</div>
+  			</div>
+  			<div class="row">
+  				<div class="col-4">
+  					<img src="https://cdn.shopify.com/s/files/1/0285/2821/4050/products/9780062667632.jpg?v=1603856028">
+  					<h4>Leave the World Behind</h4>
+  					<div class="rating">
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  					</div>
+  					<p>$50.00</p>
+  				</div>
+  				<div class="col-4">
+  					<img src="imgbook2.jpg">
+  					<h4>When no one is watching</h4>
+  					<div class="rating">
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  					</div>
+  					<p>$50.00</p>
+  				</div>
+  				<div class="col-4">
+  					<img src="file:///C:/Users/HP/Downloads/imgbook4.webp">
+  					<h4>Born Survivors</h4>
+  					<div class="rating">
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star-half-o" ></i>
+  					</div>
+  					<p>$50.00</p>
+  				</div>
+  				<div class="col-4">
+  					<img src="https://cdn.shopify.com/s/files/1/0285/2821/4050/products/9780062258595.jpg?v=1603851042">
+  					<h4>The Survivors</h4>
+  					<div class="rating">
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star" ></i>
+  						<i class="fa fa-star-half-o" ></i>
+  					</div>
+  					<p>$50.00</p>
+  				</div>
+  			</div>
+  		</div>
+  		<!-- ------------------------offer--> 
+  		<div class="offer">
+  			<div class="small-container">
+  				<div class="row">
+  					<div class="col-2">
+  						<img src="book11.jpg">
+  					</div>
+  					<div class="col-2">
+  						<p>Exclusively Avalilable on BookStore</p>
+  						<h1>Shiva Trilogy</h1>
+  						<small>it has been inspired from my understanding of the Puranas, especially the Shaivite Puranas. The philosophies are largely from the Vedas and the Upanishads. But inspiration has also been drawn from the scriptures of other religions.
+  						</small>
+  						<a href="" class="btn"> Buy Now &#8594;</a>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+
+
+  		<!-- -----------------featured categories------------------ -->
+  <div class="categories">
+  	<div class="small-container">
+  		<h2 class="title">Featuring Author</h2>
+  		<div class="row">
+  			<div class="col-2">
+  				<img src="https://m.economictimes.com/thumb/msid-68296368,width-1200,height-900,resizemode-4,imgsize-551536/robinsharma.jpg">
+  			</div>
+  			<div class="col-2">
+  				<img src="https://i.harperapps.com/authors/43204/x500.JPG">
+  			</div>
+  			<div class="col-2">
+  				<img src="https://i.harperapps.com/authors/48003/x500.JPG">
+  			</div>
+  			<div class="col-2">
+  				<img src="https://i.harperapps.com/authors/16173/x500.JPG">
+  			</div>
+  			<div class="col-2">
+  				<img src="https://harpercollins.co.in/wp-content/uploads/2016/01/Aditya-Sudarshan_Photo-by_Dhruv-Sehgal.jpg">
+  			</div>
+  			<div class="col-2">
+  				<img src="https://harpercollins.co.in/wp-content/uploads/2016/01/Admiral-S.M.-Nanda.jpg">
+  			</div>
+  		</div>
+  	</div>
+  </div>
+<!-- ----------------------------footer--------------------------- -->
+<div class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="footer-col-1">
+				<h3>Donload Our App</h3>
+				<p>Download App for Android and ios mobile phone.</p>
+				<div class="app-logo">
+					<img src="data:image/jpeg;base64,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">
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTQoxwJNewzFHptDMY0xErxhuualOWQ89OBmw&usqp=CAU">
+				</div>
+			</div>
+			<div class="footer-col-2">
+				<h1>Beyond Product</h1>
+				<p>Our Purpose Is To Sustainably Make the Plesure and Benefits of Reading Accessible to Everyone.</p>
+			</div>
+			<div class="footer-col-3">
+				<h3>Useful Link</h3>
+				<ul>
+					<li>Coupens</li>
+					<li>Block Post</li>
+					<li>Return Policy</li>
+					<li>Join Affiliate</li>
+				</ul>
+			</div>
+			<div class="footer-col-4">
+				<h3>Follow us</h3>
+				<ul>
+					<li>Facebook</li>
+					<li>Twitter</li>
+					<li>Instagram</li>
+					<li>LinkedIn</li>
+				</ul>
+			</div>
+		</div>
+		<hr>
+		<p class="Copyright">Copyright 2020 - Team Beyond Product</p>
+	</div>
+</div>
+  <!-- Swiper JS -->
+  <script src="../package/swiper-bundle.min.js"></script>
+
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	  <script>
+    		var swiper = new Swiper('.swiper-container', {
+      			spaceBetween: 30,
+      			centeredSlides: true,
+      		autoplay: {
+        	delay: 2500,
+        	disableOnInteraction: false,
+      		},
+      		pagination: {
+        	el: '.swiper-pagination',
+        	clickable: true,
+      		},
+      		navigation: {
+        	nextEl: '.swiper-button-next',
+        	prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</body>
+</html>
