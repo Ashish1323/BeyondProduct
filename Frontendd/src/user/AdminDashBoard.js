@@ -23,9 +23,7 @@ const adminLeftSide = () =>{
                 <li className="list-group-item">
                     <Link to="/admin/products" className=" text-danger nav-link ">Manage Products</Link>
                 </li>
-                <li className="list-group-item">
-                    <Link to="/admin/orders" className=" text-danger nav-link ">Manage Orders</Link>
-                </li>
+            
             </ul>
         </div>
     )

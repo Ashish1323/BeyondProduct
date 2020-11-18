@@ -57,6 +57,7 @@ const StripeCheckout = (
 
 
             <StripeCheckoutButton
+            
             stripeKey="pk_test_51HjK5EEXntxgqIuJW5qFZrqSBIbtDMy1m7m4J0P33ERlVIVJripdV5BznuVx4vu8aj9DZPwTysFkeJAxlO97LSep00VBKkckTE"
             token={makePayment}
             amount={getFinalAmount() * 100 }

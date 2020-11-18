@@ -25,7 +25,7 @@ useEffect(() => {
 }, [])
 
   return (
-    <Base title="Home Page" description="Welcome to the Tshirt Store">
+    <Base title="Beyond Product" description="Welcome to the Book Store">
       <div className="row text-center">
         <h1 className="text-white text-center"> All of Our Products</h1>
         <div className="row">
